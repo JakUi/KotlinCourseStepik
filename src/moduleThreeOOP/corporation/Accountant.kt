@@ -157,6 +157,9 @@ class Accountant(
 
     fun showAllItems() {
         val content = file.readText().trim()
+        if (content.isEmpty()) {
+            return
+        }
         val cardsAsString = content.split("\n")
         for (cardAsString in cardsAsString) {
             val properties = cardAsString.split("%")
