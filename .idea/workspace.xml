@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8221a9f4-8e0c-4472-a090-3953a265ca02" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="autoscrollToSource" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2xx6LvXjDwtDaIHY466B2OFjlJ0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Kotlin.CorporationKt.executor": "Run",
+    "Kotlin.GUIKt.executor": "Run",
+    "Kotlin.HelloWorldKt.executor": "Run",
+    "Kotlin.LessonFifteenStepTwoKt.executor": "Run",
+    "Kotlin.LessonFourteenStepTwoKt.executor": "Run",
+    "Kotlin.LessonNineStepTwoKt.executor": "Run",
+    "Kotlin.LessonSevenStepTwoKt.executor": "Run",
+    "Kotlin.LessonSixStepTwoKt.executor": "Run",
+    "Kotlin.LessonTwoStepOneProfileKt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskEightStepOneKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskEightStepTwoKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskFiveStepOneKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskFourStepOneKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskFourStepTwoKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskNineStepOneKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskNineStepTwoKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskSevenStepOneKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskSevenStepTwoKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskSixStepOneKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskSixStepTwoKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskThreeStepOneKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskThreeStepThreeKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskThreeStepTwoKt.executor": "Run",
+    "Kotlin.ModuleTwoTaskTwoStepThreeKt.executor": "Run",
+    "Kotlin.MyFamilyKt.executor": "Run",
+    "Kotlin.TaskEighteenStepOneKt.executor": "Run",
+    "Kotlin.TaskEighteenStepTwoKt.executor": "Run",
+    "Kotlin.TaskElevenStepOneKt.executor": "Run",
+    "Kotlin.TaskElevenStepTwoKt.executor": "Run",
+    "Kotlin.TaskFifteenStepOneKt.executor": "Run",
+    "Kotlin.TaskFifteenStepTwoKt.executor": "Run",
+    "Kotlin.TaskFourteenStepOneKt.executor": "Run",
+    "Kotlin.TaskFourteenStepTwoKt.executor": "Run",
+    "Kotlin.TaskSeventeenStepOneCheckPasswordKt.executor": "Run",
+    "Kotlin.TaskSeventeenStepOneKt.executor": "Run",
+    "Kotlin.TaskSeventeenStepTwoKt.executor": "Run",
+    "Kotlin.TaskSixteenStepOneKt.executor": "Run",
+    "Kotlin.TaskSixteenStepTwoKt.executor": "Run",
+    "Kotlin.TaskTenStepOneKt.executor": "Run",
+    "Kotlin.TaskTenStepTwoKt.executor": "Run",
+    "Kotlin.TaskThirteenStepOneKt.executor": "Run",
+    "Kotlin.TaskThirteenStepTwoKt.executor": "Run",
+    "Kotlin.TaskTwelveStepOneKt.executor": "Run",
+    "Kotlin.TaskTwelveStepTwoKt.executor": "Run",
+    "Kotlin.ToDoKt.executor": "Run",
+    "Kotlin.WorkWithCatsKt.executor": "Run",
+    "Kotlin.WorkingWithFilesKt.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/klyschenko/IdeaProjects/KotlinCourseStepik",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ModuleThreeOOP" />
+      <recent name="$PROJECT_DIR$/src/moduleTwo" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/moduleThreeOOP/profile" />
+      <recent name="$PROJECT_DIR$/src/moduleThreeOOP/gui" />
+      <recent name="$PROJECT_DIR$/src/moduleThreeOOP/corporation" />
+      <recent name="$PROJECT_DIR$/src/ModuleOne" />
+      <recent name="$PROJECT_DIR$/src/ModuleTwo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.CorporationKt">
+    <configuration name="CorporationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="moduleThreeOOP.corporation.CorporationKt" />
+      <module name="KotlinCourseStepik" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LessonFifteenStepTwoKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="moduleThreeOOP.LessonFifteenStepTwoKt" />
+      <module name="KotlinCourseStepik" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LessonFourteenStepTwoKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="moduleThreeOOP.LessonFourteenStepTwoKt" />
+      <module name="KotlinCourseStepik" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToDoKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="moduleThreeOOP.files.ToDoKt" />
+      <module name="KotlinCourseStepik" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkingWithFilesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="moduleThreeOOP.files.WorkingWithFilesKt" />
+      <module name="KotlinCourseStepik" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.CorporationKt" />
+        <item itemvalue="Kotlin.LessonFifteenStepTwoKt" />
+        <item itemvalue="Kotlin.ToDoKt" />
+        <item itemvalue="Kotlin.WorkingWithFilesKt" />
+        <item itemvalue="Kotlin.LessonFourteenStepTwoKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8221a9f4-8e0c-4472-a090-3953a265ca02" name="Changes" comment="" />
+      <created>1748867326147</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748867326147</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/moduleTwoBaseSyntax/TaskThirteenStepTwo.kt</url>
+          <line>2</line>
+          <properties>
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/moduleThreeOOP/LessonFourTaskTwo.kt</url>
+          <line>32</line>
+          <properties method="task">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
