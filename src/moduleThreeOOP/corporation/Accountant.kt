@@ -104,30 +104,32 @@ class Accountant(
     }
 
     fun saveProductCardToFile(productCard: ProductCard) {
-        file.appendText("${productCard.name}")
-        file.appendText("${productCard.brand}")
-        file.appendText("${productCard.price}")
+        file.appendText("${productCard.name}%${productCard.brand}%${productCard.price}")
         when (productCard) {
             is FoodCard -> {
                 val caloric = productCard.caloric
-                file.appendText("$caloric%${ProductType.FOOD}\n")
+                file.appendText("$caloric%")
             }
 
             is ShoeCard -> {
                 val size = productCard.size
-                file.appendText("$size%${ProductType.SHOE}\n")
+                file.appendText("$size%")
             }
 
             is ApplianceCard -> {
                 val wattage = productCard.wattage
-                file.appendText("$wattage%${ProductType.APPLIANCE}\n")
+                file.appendText("$wattage%")
             }
         }
+        file.appendText("${productCard.productType}\n")
     }
 
     fun loadAllCards(): MutableList<ProductCard> {
         val cards = mutableListOf<ProductCard>()
         val content = file.readText().trim()
+        if (content.isEmpty()) {
+            return cards
+        }
         val cardsAsString = content.split("\n")
         for (cardAsString in cardsAsString) {
             val properties = cardAsString.split("%")
@@ -156,32 +158,8 @@ class Accountant(
     }
 
     fun showAllItems() {
-        val content = file.readText().trim()
-        if (content.isEmpty()) {
-            return
-        }
-        val cardsAsString = content.split("\n")
-        for (cardAsString in cardsAsString) {
-            val properties = cardAsString.split("%")
-            val name = properties[0]
-            val brand = properties[1]
-            val price = properties[2].toInt()
-            val type = properties.last()
-            val productType = ProductType.valueOf(type)
-            val productCard = when (productType) {
-                ProductType.FOOD -> {
-                    val caloric = properties[3].toInt()
-                    FoodCard(name, brand, price, caloric)
-                }
-                ProductType.APPLIANCE -> {
-                    val wattage = properties[3].toInt()
-                    ApplianceCard(name, brand, price, wattage)
-                }
-                ProductType.SHOE -> {
-                    val size = properties[3].toFloat()
-                    ShoeCard(name, brand, price, size)
-                }
-            }
+        val productCards = loadAllCards()
+        for (productCard in productCards) {
             productCard.printInfo()
         }
     }
@@ -201,30 +179,27 @@ class Accountant(
         val productType: ProductType = productTypes[productTypeIndex]
         print("Enter the product name: ")
         val productName = readln()
-        file.appendText("$productName%")
         print("Enter the product brand ")
         val productBrand = readln()
-        file.appendText("$productBrand%")
         print("Enter the product price: ")
         val productPrice = readln().toInt()
-        file.appendText("$productPrice%")
-        when(productType) {
+        val card = when(productType) {
             ProductType.FOOD -> {
                 print("Enter the caloric: ")
                 val caloric = readln().toInt()
-                file.appendText("$caloric%")
+                FoodCard(productName, productBrand, productPrice, caloric)
             }
             ProductType.APPLIANCE -> {
                 print("Enter the wattage: ")
                 val wattage = readln().toInt()
-                file.appendText("$wattage%")
+                ApplianceCard(productName, productBrand, productPrice, wattage)
             }
             ProductType.SHOE -> {
                 print("Enter the size: ")
                 val size = readln().toFloat()
-                file.appendText("$size%")
+                ShoeCard(productName, productBrand, productPrice, size)
             }
         }
-        file.appendText("$productType\n")
+        saveProductCardToFile(card)
     }
 }
