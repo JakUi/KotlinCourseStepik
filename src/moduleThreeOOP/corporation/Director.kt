@@ -3,8 +3,7 @@ package moduleThreeOOP.corporation
 class Director(
     id: Int,
     name: String,
-    age: Int,
-    position: WorkersType
+    age: Int
 ): Worker(id = id, name = name, age = age, position = WorkersType.DIRECTOR)  {
 
 //        val assistant = Assistant("Helen")

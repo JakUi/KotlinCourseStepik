@@ -4,8 +4,7 @@ package moduleThreeOOP.corporation
 class Assistant(
     id: Int,
     name: String,
-    age: Int = 0,
-    position: WorkersType
+    age: Int = 0
 ): Worker(id = id, name = name, age = age, position = WorkersType.ASSISTANT)  {
     fun bringCoffee(count: Int, drinkName: String): String {
         repeat(count) {

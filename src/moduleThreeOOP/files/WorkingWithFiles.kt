@@ -4,6 +4,6 @@ import java.io.File
 
 fun main() {
     val file = File("test.txt")
-//    file.writeText("Hello")
+//    fileProductCards.writeText("Hello")
     file.appendText("World!!!")
 }

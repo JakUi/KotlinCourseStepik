@@ -61,11 +61,10 @@ import java.io.File
 class Accountant(
     id: Int,
     name: String,
-    age: Int = 0,
-    position: WorkersType
+    age: Int = 0
 ): Worker(id = id, name = name, age = age, position = WorkersType.ACCOUNTANT)  {
 
-    val file = File("product_card.txt")
+    val fileProductCards = File("product_card.txt")
     val employeesFile = File("employees.txt")
 
     override fun work() {
@@ -99,36 +98,37 @@ class Accountant(
                 break
             }
         }
-        file.writeText("")
+        fileProductCards.writeText("")
         for (card in cards) {
             saveProductCardToFile(card)
         }
     }
 
     fun saveProductCardToFile(productCard: ProductCard) {
-        file.appendText("${productCard.name}%${productCard.brand}%${productCard.price}%")
+        fileProductCards.appendText("${productCard.name}%${productCard.brand}%${productCard.price}%")
         when (productCard) {
             is FoodCard -> {
                 val caloric = productCard.caloric
-                file.appendText("$caloric%")
+                fileProductCards.appendText("$caloric%")
             }
 
             is ShoeCard -> {
                 val size = productCard.size
-                file.appendText("$size%")
+                fileProductCards.appendText("$size%")
             }
 
             is ApplianceCard -> {
                 val wattage = productCard.wattage
-                file.appendText("$wattage%")
+                fileProductCards.appendText("$wattage%")
             }
         }
-        file.appendText("${productCard.productType}\n")
+        fileProductCards.appendText("${productCard.productType}\n")
     }
 
     fun loadAllCards(): MutableList<ProductCard> {
         val cards = mutableListOf<ProductCard>()
-        val content = file.readText().trim()
+        if (!fileProductCards.exists()) fileProductCards.createNewFile()
+        val content = fileProductCards.readText().trim()
         if (content.isEmpty()) {
             return cards
         }
@@ -224,21 +224,32 @@ class Accountant(
         val name = readln()
         print("Enter age: ")
         val age = readln().toInt()
+        val employee = fillEmployeeCard(id, name, age, workerType)
+//        val employee = when (workerType) {
+//            WorkersType.DIRECTOR -> Director(id, name, age)
+//            WorkersType.ACCOUNTANT -> Accountant(id, name, age)
+//            WorkersType.ASSISTANT -> Assistant(id, name, age)
+//            WorkersType.CONSULTANT -> Consultant(id, name, age)
+//        }
+        saveEmployeeToFile(employee)
+//        employeesFile.appendText("${employee.id}%${employee.name}%${employee.age}%${employee.position}\n")
+    }
+
+    fun fillEmployeeCard(id: Int, name: String, age: Int, workerType: WorkersType): Worker {
         val employee = when (workerType) {
-            WorkersType.DIRECTOR -> Director(id, name, age, position)
-            WorkersType.ACCOUNTANT -> Accountant(id, name, age, position)
-            WorkersType.ASSISTANT -> Assistant(id, name, age, position)
-            WorkersType.CONSULTANT -> Consultant(id, name, age, position)
+            WorkersType.DIRECTOR -> Director(id, name, age)
+            WorkersType.ACCOUNTANT -> Accountant(id, name, age)
+            WorkersType.ASSISTANT -> Assistant(id, name, age)
+            WorkersType.CONSULTANT -> Consultant(id, name, age)
         }
-        employeesFile.appendText("${employee.id}%${employee.name}%${employee.age}%${employee.position}\n")
+        return employee
     }
 
     fun loadAllEmployees(): MutableList<Worker> {
         val employees = mutableListOf<Worker>()
+        if (!employeesFile.exists()) employeesFile.createNewFile()  // если файла нет, то он создастся
         val content = employeesFile.readText().trim()
-        if (content.isEmpty()) {
-            return employees
-        }
+        if (content.isEmpty()) return employees
         val employeesAsString = content.split("\n")
         for (employeeAsString in employeesAsString) {
             val properties = employeeAsString.split("%")
@@ -246,34 +257,26 @@ class Accountant(
             val name = properties[1]
             val age = properties[2].toInt()
             val workAs = properties.last()
-            val worker = WorkersType.valueOf(workAs)
-            val workerCard = when (worker) {
-                WorkersType.DIRECTOR -> {
-                    Director(id, name, age, position)
-                }
-                WorkersType.ACCOUNTANT -> {
-                    Accountant(id, name, age, position)
-                }
-                WorkersType.ASSISTANT -> {
-                    Assistant(id, name, age, position)
-                }
-                WorkersType.CONSULTANT -> {
-                    Consultant(id, name, age, position)
-                }
-            }
+            val workerType = WorkersType.valueOf(workAs)
+            val workerCard = fillEmployeeCard(id, name, age, workerType)
+//            val workerCard = when (worker) {
+//                WorkersType.DIRECTOR -> Director(id, name, age)
+//                WorkersType.ACCOUNTANT -> Accountant(id, name, age)
+//                WorkersType.ASSISTANT -> Assistant(id, name, age)
+//                WorkersType.CONSULTANT -> Consultant(id, name, age)
+//            }
             employees.add(workerCard)
         }
         return employees
     }
 
-    fun saveEmployeesToFile(employee: Worker) {
-        employeesFile.appendText("${employee.id}%${employee.name}%${employee.age}%")
-        employeesFile.appendText("${employee.position}\n")
+    fun saveEmployeeToFile(employee: Worker) {
+        employeesFile.appendText("${employee.id}%${employee.name}%${employee.age}%${employee.position}\n")
     }
 
     fun fireAnEmployee() {
         val employees: MutableList<Worker> = loadAllEmployees()
-        print("Enter employe's id to fire: ")
+        print("Enter employee's id to fire: ")
         val id = readln().toInt()
         for (emp in employees) {
             if (emp.id == id) {
@@ -283,7 +286,7 @@ class Accountant(
         }
         employeesFile.writeText("")
         for (e in employees) {
-            saveEmployeesToFile(e)
+            saveEmployeeToFile(e)
         }
     }
 

@@ -61,7 +61,7 @@ fun main() {
 //    val director = Director("Ksana", 42)
 //    val consultant = Consultant(2, "Nika")
 //    val assistant = Assistant(name = "John", age = 34)
-    val accountant = Accountant(3,"Konstantin", 37, WorkersType.ACCOUNTANT)
+    val accountant = Accountant(3,"Konstantin", 37 )
 //    consultant.work()
     accountant.work()
 }

@@ -5,8 +5,7 @@ import kotlin.random.Random
 class Consultant(
     id: Int,
     name: String,
-    age: Int = 0,
-    position: WorkersType
+    age: Int = 0
 ): Worker(id = id, name = name, age = age, position = WorkersType.CONSULTANT)  {
 
     fun sayHello() {
