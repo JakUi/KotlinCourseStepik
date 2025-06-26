@@ -1,2 +1,0 @@
-milk%Green Hill%34%341%FOOD
-sneakers%nike%342%42.0%SHOE
