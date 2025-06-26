@@ -1,9 +1,11 @@
 package moduleThreeOOP.corporation
 
 class Director(
+    id: Int,
     name: String,
-    age: Int
-): Worker(name = name, age = age) {
+    age: Int,
+    position: WorkersType
+): Worker(id = id, name = name, age = age, position = WorkersType.DIRECTOR)  {
 
 //        val assistant = Assistant("Helen")
     fun takeCoffee (assistant: Assistant) {

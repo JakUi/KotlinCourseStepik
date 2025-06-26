@@ -1,5 +1,7 @@
 package moduleThreeOOP.corporation
 
+import kotlin.contracts.contract
+
 //fun main() {
 ////    val assistant = Assistant()
 ////    assistant.bringCoffee(5, "espresso")
@@ -56,12 +58,10 @@ package moduleThreeOOP.corporation
 //}
 
 fun main() {
-    val director = Director("Ksana", 42)
-    val consultant = Consultant("Nika")
-    val assistant = Assistant(name = "John", age = 34)
-    val accountant = Accountant("Konstantin", 37)
-    val employers = listOf<Worker>(director, consultant, assistant, accountant)
-    for (employe in employers) {
-        employe.work()
-    }
+//    val director = Director("Ksana", 42)
+//    val consultant = Consultant(2, "Nika")
+//    val assistant = Assistant(name = "John", age = 34)
+    val accountant = Accountant(3,"Konstantin", 37, WorkersType.ACCOUNTANT)
+//    consultant.work()
+    accountant.work()
 }

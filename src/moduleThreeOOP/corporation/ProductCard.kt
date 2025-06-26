@@ -26,6 +26,6 @@ open class ProductCard(
     val productType: ProductType
 ) {
     open fun printInfo() {
-        print("Name ${this.name} Brand ${this.brand} Price ${this.price} Product type ${productType.title}")
+        print("Name ${this.name} Brand ${this.brand} Price ${this.price} Product type ${productType.title} ")
     }
 }
