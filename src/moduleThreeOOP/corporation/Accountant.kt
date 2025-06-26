@@ -13,6 +13,7 @@ class Accountant(
     val fileProductCards = File("product_card.txt")
     val fileWorkers = File("workers.txt")
 
+
     override fun work() {
         val operationCodes = OperationCodes.entries
         while (true) {
