@@ -34,7 +34,7 @@ class Accountant(
         }
     }
 
-    fun removeProducCard() {
+    private fun removeProducCard() {
         val cards: MutableList<ProductCard> = loadAllCards()
         print("Enter name of card for removing: ")
         val name = readln()
@@ -50,7 +50,7 @@ class Accountant(
         }
     }
 
-    fun saveProductCardToFile(productCard: ProductCard) {
+    private fun saveProductCardToFile(productCard: ProductCard) {
         fileProductCards.appendText("${productCard.name}%${productCard.brand}%${productCard.price}%")
         when (productCard) {
             is FoodCard -> {
@@ -71,7 +71,7 @@ class Accountant(
         fileProductCards.appendText("${productCard.productType}\n")
     }
 
-    fun loadAllCards(): MutableList<ProductCard> {
+    private fun loadAllCards(): MutableList<ProductCard> {
         val cards = mutableListOf<ProductCard>()
         if (!fileProductCards.exists()) fileProductCards.createNewFile()
         val content = fileProductCards.readText().trim()
@@ -105,14 +105,14 @@ class Accountant(
         return cards
     }
 
-    fun showAllItems() {
+    private fun showAllItems() {
         val productCards = loadAllCards()
         for (productCard in productCards) {
             productCard.printInfo()
         }
     }
 
-    fun registerNewItem() {
+    private fun registerNewItem() {
         val productTypes = ProductType.entries
         print("Enter the product type. ")
         for ((index, type) in productTypes.withIndex()) {
@@ -151,7 +151,7 @@ class Accountant(
         saveProductCardToFile(card)
     }
 
-    fun registerNewEmployee() {
+    private fun registerNewEmployee() {
         val positions = Position.entries
         print("Choose position - ")
         for ((index, position) in positions.withIndex()) {
@@ -179,7 +179,7 @@ class Accountant(
         saveWorkerToFile(worker)
     }
 
-    fun loadAllEmployees(): MutableList<Worker> {
+    private fun loadAllEmployees(): MutableList<Worker> {
         val employees = mutableListOf<Worker>()
         if (!fileWorkers.exists()) fileWorkers.createNewFile()  // если файла нет, то он создастся
         val content = fileWorkers.readText().trim()
@@ -203,11 +203,11 @@ class Accountant(
         return employees
     }
 
-    fun saveWorkerToFile(worker: Worker) {
+    private fun saveWorkerToFile(worker: Worker) {
         fileWorkers.appendText("${worker.id}%${worker.name}%${worker.age}%${worker.position}\n")
     }
 
-    fun fireEmployee() {
+    private fun fireEmployee() {
         print("Enter employee's id to fire: ")
         val id = readln().toInt()
         val employees = loadAllEmployees()
@@ -219,7 +219,7 @@ class Accountant(
         }
     }
 
-    fun showAllEmployees() {
+    private fun showAllEmployees() {
         val allEmployees = loadAllEmployees()
         for (employee in allEmployees) {
             employee.printInfo()

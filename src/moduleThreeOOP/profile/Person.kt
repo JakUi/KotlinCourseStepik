@@ -1,25 +1,11 @@
 package moduleThreeOOP.profile
 
-class Person {
-    //    val name: String = ""
-//    val age: Int = 0
-    val name: String
-    val age: Int
-    val height: Int
-    val weight: Int
-
-//    fun init(name: String, age: Int, height: Int, weight: Int){
-//        this.name = name
-//        this.age = age
-//        this.height = height
-//        this.weight = weight
-//    }
-    constructor(name: String, age: Int, height: Int, weight: Int){
-    this.name = name
-    this.age = age
-    this.height = height
-    this.weight = weight
-}
+class Person(
+    private val name: String,
+    private val age: Int,
+    private val height: Int,
+    private val weight: Int
+) {
 
     fun sayHello() {
         println("Hello! My name is: $name")
