@@ -2,70 +2,16 @@ package moduleThreeOOP.corporation
 import moduleThreeOOP.corporation.OperationCodes.*
 import java.io.File
 
-// Моё решение (блок кода ниже)
-//class Accountant(
-//    name: String,
-//    age: Int = 0
-//): Worker(name = name, age = age)  {
-//
-////    fun addNewProduct(name: String, brand: String, price: Int, caloric: Int = 0, wattage: Int = 0,
-////                      size: Float = 0f) {
-////        val card: ProductCard = ProductCard(name, brand, price)
-////        card.printIfo()
-////        if (caloric > 0) {
-////            print("Amount of calories $caloric")
-////        } else if (wattage > 0) {
-////            print("Wattage $wattage")
-////        } else if (size > 0) {
-////            print("Size $size")
-////        }
-////        println()
-////    }
-//
-//    override fun work() {
-//        print("Enter the operation code. 0 - exit, 1 - register new item: ")
-//        var operationCode = readln().toInt()
-//        while (operationCode == 1) {
-//            print("Enter the product type. 0 - food, 1 - appliance, 2 - shoe: ")
-//            val productType = readln().toInt()
-//            print("Enter the product name: ")
-//            val name = readln()
-//            print("Enter the product brand ")
-//            val brand = readln()
-//            print("Enter the product price: ")
-//            val price = readln().toInt()
-//            val card: ProductCard = ProductCard(name, brand, price)
-//            if (productType == 0) {
-//                print("Enter amount of calories: ")
-//                val caloric = readln().toInt()
-//                card.printIfo()
-//                print("Amount of calories $caloric")
-//            } else if (productType == 1) {
-//                print("Enter wattage: ")
-//                val wattage = readln().toInt()
-//                card.printIfo()
-//                print("Wattage $wattage")
-//            } else {
-//                print("Enter size: ")
-//                val size = readln().toFloat()
-//                card.printIfo()
-//                print("Size $size")
-//            }
-//            print("Enter the operation code. 0 - exit, 1 - register new item: ")
-//            operationCode = readln().toInt()
-//        }
-//    }
-//}
 
 // Решение преподавателя (для дальнейшей работы):
 class Accountant(
     id: Int,
     name: String,
     age: Int = 0
-): Worker(id = id, name = name, age = age, position = WorkersType.ACCOUNTANT)  {
+): Worker(id = id, name = name, age = age, position = Position.ACCOUNTANT)  {
 
     val fileProductCards = File("product_card.txt")
-    val employeesFile = File("employees.txt")
+    val fileWorkers = File("workers.txt")
 
     override fun work() {
         val operationCodes = OperationCodes.entries
@@ -82,7 +28,7 @@ class Accountant(
                 SHOW_ALL_ITEMS -> showAllItems()
                 REMOVE_PRODUCT_CARD -> removeProducCard()
                 REGISTER_NEW_EMPLOYEE -> registerNewEmployee()
-                FIRE_AN_EMPLOYEE -> fireAnEmployee()
+                FIRE_AN_EMPLOYEE -> fireEmployee()
                 SHOW_ALL_EMPLOYEES -> showAllEmployees()
             }
         }
@@ -206,94 +152,77 @@ class Accountant(
     }
 
     fun registerNewEmployee() {
+        val positions = Position.entries
         print("Choose position - ")
-        val workersTypes = WorkersType.entries
-        for ((index, type) in workersTypes.withIndex()) {
-            print("$index - ${type.title}")
-            if (index <  workersTypes.size - 1) {
+        for ((index, position) in positions.withIndex()) {
+            print("$index - ${position.title}")
+            if (index <  positions.size - 1) {
                 print(", ")
             } else {
                 print(": ")
             }
         }
-        val workerIndex = readln().toInt()
-        val workerType = workersTypes[workerIndex]
+        val positionIndex = readln().toInt()
+        val position = positions[positionIndex]
         print("Enter id: ")
         val id = readln().toInt()
         print("Enter name: ")
         val name = readln()
         print("Enter age: ")
         val age = readln().toInt()
-        val employee = fillEmployeeCard(id, name, age, workerType)
-//        val employee = when (workerType) {
-//            WorkersType.DIRECTOR -> Director(id, name, age)
-//            WorkersType.ACCOUNTANT -> Accountant(id, name, age)
-//            WorkersType.ASSISTANT -> Assistant(id, name, age)
-//            WorkersType.CONSULTANT -> Consultant(id, name, age)
-//        }
-        saveEmployeeToFile(employee)
-//        employeesFile.appendText("${employee.id}%${employee.name}%${employee.age}%${employee.position}\n")
-    }
-
-    fun fillEmployeeCard(id: Int, name: String, age: Int, workerType: WorkersType): Worker {
-        val employee = when (workerType) {
-            WorkersType.DIRECTOR -> Director(id, name, age)
-            WorkersType.ACCOUNTANT -> Accountant(id, name, age)
-            WorkersType.ASSISTANT -> Assistant(id, name, age)
-            WorkersType.CONSULTANT -> Consultant(id, name, age)
+        val worker = when (position) {
+            Position.DIRECTOR -> Director(id, name, age)
+            Position.ACCOUNTANT -> Accountant(id, name, age)
+            Position.ASSISTANT -> Assistant(id, name, age)
+            Position.CONSULTANT -> Consultant(id, name, age)
         }
-        return employee
+        saveWorkerToFile(worker)
     }
 
     fun loadAllEmployees(): MutableList<Worker> {
         val employees = mutableListOf<Worker>()
-        if (!employeesFile.exists()) employeesFile.createNewFile()  // если файла нет, то он создастся
-        val content = employeesFile.readText().trim()
+        if (!fileWorkers.exists()) fileWorkers.createNewFile()  // если файла нет, то он создастся
+        val content = fileWorkers.readText().trim()
         if (content.isEmpty()) return employees
-        val employeesAsString = content.split("\n")
-        for (employeeAsString in employeesAsString) {
-            val properties = employeeAsString.split("%")
+        val employeesAsText = content.split("\n")
+        for (employeeAsText in employeesAsText) {
+            val properties = employeeAsText.split("%")
             val id = properties[0].toInt()
             val name = properties[1]
             val age = properties[2].toInt()
-            val workAs = properties.last()
-            val workerType = WorkersType.valueOf(workAs)
-            val workerCard = fillEmployeeCard(id, name, age, workerType)
-//            val workerCard = when (worker) {
-//                WorkersType.DIRECTOR -> Director(id, name, age)
-//                WorkersType.ACCOUNTANT -> Accountant(id, name, age)
-//                WorkersType.ASSISTANT -> Assistant(id, name, age)
-//                WorkersType.CONSULTANT -> Consultant(id, name, age)
-//            }
-            employees.add(workerCard)
+            val positionAsText = properties.last()
+            val position = Position.valueOf(positionAsText)
+            val worker = when (position) {
+                Position.DIRECTOR -> Director(id, name, age)
+                Position.ACCOUNTANT -> Accountant(id, name, age)
+                Position.ASSISTANT -> Assistant(id, name, age)
+                Position.CONSULTANT -> Consultant(id, name, age)
+            }
+            employees.add(worker)
         }
         return employees
     }
 
-    fun saveEmployeeToFile(employee: Worker) {
-        employeesFile.appendText("${employee.id}%${employee.name}%${employee.age}%${employee.position}\n")
+    fun saveWorkerToFile(worker: Worker) {
+        fileWorkers.appendText("${worker.id}%${worker.name}%${worker.age}%${worker.position}\n")
     }
 
-    fun fireAnEmployee() {
-        val employees: MutableList<Worker> = loadAllEmployees()
+    fun fireEmployee() {
         print("Enter employee's id to fire: ")
         val id = readln().toInt()
-        for (emp in employees) {
-            if (emp.id == id) {
-                employees.remove(emp)
-                break
+        val employees = loadAllEmployees()
+        fileWorkers.writeText("")
+        for (employee in employees) {
+            if (employee.id != id) {
+                saveWorkerToFile(employee)
             }
-        }
-        employeesFile.writeText("")
-        for (e in employees) {
-            saveEmployeeToFile(e)
         }
     }
 
     fun showAllEmployees() {
         val allEmployees = loadAllEmployees()
         for (employee in allEmployees) {
-            employee.printWorkerInfo()
+            employee.printInfo()
         }
     }
 }

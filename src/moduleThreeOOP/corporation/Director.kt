@@ -4,7 +4,7 @@ class Director(
     id: Int,
     name: String,
     age: Int
-): Worker(id = id, name = name, age = age, position = WorkersType.DIRECTOR)  {
+): Worker(id = id, name = name, age = age, position = Position.DIRECTOR)  {
 
 //        val assistant = Assistant("Helen")
     fun takeCoffee (assistant: Assistant) {

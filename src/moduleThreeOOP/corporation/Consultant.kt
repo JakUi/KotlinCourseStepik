@@ -6,7 +6,7 @@ class Consultant(
     id: Int,
     name: String,
     age: Int = 0
-): Worker(id = id, name = name, age = age, position = WorkersType.CONSULTANT)  {
+): Worker(id = id, name = name, age = age, position = Position.CONSULTANT)  {
 
     fun sayHello() {
         if (age > 0) {
