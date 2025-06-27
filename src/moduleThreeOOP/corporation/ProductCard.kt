@@ -7,9 +7,8 @@ abstract class ProductCard(
     var price: Int,
     val productType: ProductType
 ) {
-    abstract fun printInfo()
 
-//    abstract fun printInfo() {
-//        print("Name ${this.name} Brand ${this.brand} Price ${this.price} Product type ${productType.title} ")
-//    }
+    fun printInfo() {
+        print(this)
+    }
 }
