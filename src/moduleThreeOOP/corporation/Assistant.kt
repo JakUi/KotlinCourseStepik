@@ -5,7 +5,16 @@ class Assistant(
     id: Int,
     name: String,
     age: Int = 0
-): Worker(id = id, name = name, age = age, position = Position.ASSISTANT)  {
+): Worker(id = id, name = name, age = age, position = Position.ASSISTANT), Cleaner, Supplier  {
+
+    override fun clean() {
+        println("My position is assistant. I'm cleaning workplace...")
+    }
+
+    override fun buyThings() {
+        println("My position is assistant. I'm buying things...")
+    }
+
     fun bringCoffee(count: Int, drinkName: String): String {
         repeat(count) {
             println("Встать со стула")
