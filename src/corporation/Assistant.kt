@@ -14,6 +14,7 @@ class Assistant(
     position = Position.ASSISTANT
 ), Cleaner, Supplier  {
 
+
     override fun clean() {
         println("My position is assistant. I'm cleaning workplace...")
     }
