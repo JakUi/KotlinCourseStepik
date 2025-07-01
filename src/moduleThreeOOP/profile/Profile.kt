@@ -57,10 +57,14 @@ fun main(){
 
 //    first.init(name = name, age = age, height = height, weight = weight)
 //    second.init(name = name2, age = age2, height = height2, weight = weight2)//
-    val first = Person(name = name, age = age, height = height, weight = weight)
-    val second = Person(name = name2, age = age2, height = height2, weight = weight2)
+    val first = Person(name = name, height = height, weight = weight)
+    val second = Person(name = name2, height = height2, weight = weight2)
+    first.age = age
+    second.age = age2
     first.printPersonInfo()
     second.printPersonInfo()
+    first.age = 0
+    second.age = 0
     first.sayHello()
     second.sayHello()
     first.running()
