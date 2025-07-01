@@ -1,4 +1,4 @@
-package moduleThreeOOP.profile
+package profile
 
 //fun main(){
 //    val first: Person = Person()

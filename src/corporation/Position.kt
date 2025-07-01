@@ -1,4 +1,4 @@
-package moduleThreeOOP.corporation
+package corporation
 
 enum class Position(val title: String) {
     DIRECTOR(title = "Director"),

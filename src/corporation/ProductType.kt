@@ -1,4 +1,4 @@
-package moduleThreeOOP.corporation
+package corporation
 
 enum class ProductType(val title: String) {
 

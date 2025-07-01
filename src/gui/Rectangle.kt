@@ -1,4 +1,4 @@
-package moduleThreeOOP.gui
+package gui
 
 //class Rectangle {
 //    val width: Int

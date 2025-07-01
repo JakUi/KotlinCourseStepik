@@ -1,4 +1,4 @@
-package moduleThreeOOP.gui
+package gui
 
 fun main() {
 //    print("Enter rectangle's height: ")

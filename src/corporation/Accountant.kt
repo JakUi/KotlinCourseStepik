@@ -1,5 +1,5 @@
-package moduleThreeOOP.corporation
-import moduleThreeOOP.corporation.OperationCodes.*
+package corporation
+import corporation.OperationCodes.*
 import java.io.File
 
 

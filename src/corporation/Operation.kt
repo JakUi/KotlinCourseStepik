@@ -1,4 +1,4 @@
-package moduleThreeOOP.corporation
+package corporation
 
 enum class OperationCodes(val title:String) {
 

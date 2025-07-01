@@ -1,4 +1,4 @@
-package moduleThreeOOP.cats
+package cats
 
 abstract class CatsFamily(
     val legsCount: Int = 4

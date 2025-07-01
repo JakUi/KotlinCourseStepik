@@ -1,4 +1,4 @@
-package moduleThreeOOP.profile
+package profile
 
 class Person(
     private val name: String,

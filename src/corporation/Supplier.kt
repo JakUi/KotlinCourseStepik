@@ -1,4 +1,4 @@
-package moduleThreeOOP.corporation
+package corporation
 
 interface Supplier {
 

@@ -1,4 +1,4 @@
-package moduleThreeOOP.cats
+package cats
 
 class Lion(
     val animalInPride: Int

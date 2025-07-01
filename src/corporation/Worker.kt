@@ -1,4 +1,4 @@
-package moduleThreeOOP.corporation
+package corporation
 
 abstract class Worker(
     val id: Int,

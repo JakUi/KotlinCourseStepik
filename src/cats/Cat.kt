@@ -1,4 +1,4 @@
-package moduleThreeOOP.cats
+package cats
 
 class Cat(val name: String): CatsFamily() {
 

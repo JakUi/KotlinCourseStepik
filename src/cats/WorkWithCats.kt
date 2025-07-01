@@ -1,4 +1,4 @@
-package moduleThreeOOP.cats
+package cats
 
 fun main() {
     val cat = Cat("Morris")
