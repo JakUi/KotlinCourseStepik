@@ -2,7 +2,7 @@ package corporation
 
 import java.io.File
 
-class WorkersRepository {
+object WorkersRepository {
 
 
     private val fileWorkers = File("workers.txt")
@@ -21,6 +21,7 @@ class WorkersRepository {
     }
 
     private fun loadAllEmployees(): MutableList<Worker> {
+        println("Load all employees")
         val employees = mutableListOf<Worker>()
         if (!fileWorkers.exists()) fileWorkers.createNewFile()  // если файла нет, то он создастся
         val content = fileWorkers.readText().trim()
