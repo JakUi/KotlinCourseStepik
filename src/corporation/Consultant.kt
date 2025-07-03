@@ -19,6 +19,10 @@ class Consultant(
         println("My position is consultant. I'm cleaning workplace...")
     }
 
+    override fun copy(salary: Int, age: Int): Consultant {
+        return Consultant(this.id, this.name, age, salary)
+    }
+
     fun sayHello() {
         if (age > 0) {
             println("Привет! Меня зовут $name. мне $age лет.")

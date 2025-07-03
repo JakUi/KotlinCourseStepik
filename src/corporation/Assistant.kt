@@ -23,6 +23,10 @@ class Assistant(
         println("My position is assistant. I'm buying things...")
     }
 
+    override fun copy(salary: Int, age: Int): Assistant {
+        return Assistant(this.id, this.name, age, salary)
+    }
+
     fun bringCoffee(count: Int, drinkName: String): String {
         repeat(count) {
             println("Встать со стула")
