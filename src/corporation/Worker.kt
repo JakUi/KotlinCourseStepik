@@ -16,8 +16,18 @@ abstract class Worker(
         println(this)
     }
 
-
     override fun toString(): String {
         return "Id: $id Name: $name Age: $age Position: $position Salary: $salary"
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (other !is Worker) {
+            return false
+        } else if (this.id == other.id && this.name == other.name && this.age == other.age && this.salary == other.salary &&
+            this.position == other.position) {
+            return true
+        } else {
+            return false
+        }
     }
 }

@@ -7,3 +7,4 @@ fun main() {
         worker.work()
     }
 }
+// 1 Name: Kseniia Age: 34 Position: DIRECTOR Salary: 230000
