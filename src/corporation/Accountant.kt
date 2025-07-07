@@ -2,11 +2,11 @@ package corporation
 import corporation.OperationCodes.*
 
 
-class Accountant(
-    id: Int,
-    name: String,
-    age: Int = 0,
-    salary: Int
+data class Accountant(
+    override val id: Int,
+    override val name: String,
+    override val age: Int,
+    override val salary: Int
 ): Worker(
     id = id,
     name = name,

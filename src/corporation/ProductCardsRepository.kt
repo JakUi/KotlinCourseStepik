@@ -23,8 +23,8 @@ object ProductCardsRepository {
     }
 
 
-    private fun loadAllCards(): MutableList<ProductCard> {
-        val cards = mutableListOf<ProductCard>()
+    private fun loadAllCards(): MutableSet<ProductCard> {
+        val cards = mutableSetOf<ProductCard>()
         if (!fileProductCards.exists()) fileProductCards.createNewFile()
         val content = fileProductCards.readText().trim()
         if (content.isEmpty()) {
