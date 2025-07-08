@@ -78,4 +78,23 @@ object WorkersRepository {
         }
         fileWorkers.writeText(content.toString())
     }
+
+    fun findAssistant(): Assistant? {
+        for (worker in _workers) {
+            if (worker is Assistant) {
+                return worker
+            }
+        }
+        return null
+    }
+
+    fun findDirector(): Director? {
+        for (worker in _workers) {
+            if (worker is Director) {
+                return worker
+            }
+        }
+        return null
+    }
+
 }

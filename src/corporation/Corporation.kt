@@ -2,8 +2,11 @@ package corporation
 
 
 fun main() {
-    val workers = WorkersRepository.workers
-    for (worker in workers) {
-        worker.work()
+    val assistant = WorkersRepository.findAssistant()
+    assistant?.printInfo()
+    val director = WorkersRepository.findDirector()
+    director?.printInfo()
+    if (assistant != null) {
+        director?.takeCoffee(assistant)
     }
 }
