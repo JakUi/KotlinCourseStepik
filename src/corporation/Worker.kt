@@ -10,7 +10,13 @@ abstract class Worker(
 
     abstract fun work()
 
-    abstract fun copy(salary: Int = this.salary, age: Int = this.age): Worker
+    abstract fun copy(
+        id: Int = this.id,
+        name: String = this.name,
+        age: Int = this.age,
+        salary: Int = this.salary,
+        position: Position = this.position
+    ): Worker
 
     fun printInfo() {
         println(this)

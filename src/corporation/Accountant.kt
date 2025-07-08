@@ -65,8 +65,8 @@ data class Accountant(
         }
     }
 
-    override fun copy(salary: Int, age: Int): Accountant {
-        return Accountant(this.id, this.name, age, salary)
+    override fun copy(id: Int, name: String, age: Int, salary: Int, position: Position): Worker {
+        return copy(id, name, age, salary) // этот метод copy создан в data-классе по умолчанию. И он возвращает Accountant(id, name, age, salary)
     }
 
     private fun registerNewItem() {

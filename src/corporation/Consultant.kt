@@ -19,8 +19,8 @@ data class Consultant(
         println("My position is consultant. I'm cleaning workplace...")
     }
 
-    override fun copy(salary: Int, age: Int): Consultant {
-        return Consultant(this.id, this.name, age, salary)
+    override fun copy(id: Int, name: String, age: Int, salary: Int, position: Position): Worker {
+        return copy(id, name, age, salary) // этот метод copy создан в data-классе по умолчанию. И он возвращает Accountant(id, name, age, salary)
     }
 
     fun sayHello() {
