@@ -11,7 +11,7 @@ data class Director(
     age = age,
     salary = salary,
     position = Position.DIRECTOR
-), Supplier  {
+), Supplier {
 
     override fun buyThings() {
         println("My position is director. I'm buying things...")
